@@ -6,11 +6,25 @@
 /*   By: jlamonic <jlamonic@student.42.fr> >        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/10 14:55:04 by jlamonic          #+#    #+#             */
-/*   Updated: 2021/10/15 00:23:37 by jlamonic         ###   ########.fr       */
+/*   Updated: 2021/10/16 00:17:28 by jlamonic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+/*
+** Функция strnstr() находит первое вхождение строки с нулевым окончанием
+** в стоге сена строки, где ищется не более символов len
+** Символы, которые появляются после символа "\0", не ищутся.
+** Поскольку функция strnstr() является специфичным для FreeBSD API,
+** ее следует использовать только
+** когда переносимость не является проблемой.
+**
+** RETURN
+**
+** Введется поиск подстроки.Возвращает указатель на первое вхождение.
+** Если не нашел возвращает 0.
+*/
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
@@ -33,12 +47,3 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	}
 	return (0);
 }
-//#include <stdio.h>
-//#include <string.h>
-//
-//int main (void)
-//{
-//	printf("%s\n", strnstr("searchingFor","in",10));
-//	printf("%s", ft_strnstr("in","searchingFor",10));
-//	return (0);
-//}

@@ -1,15 +1,8 @@
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# define FT_UL_MAX	((unsigned long)(~0L))
 # include <unistd.h>
 # include <stdlib.h>
-
-typedef struct s_list
-{
-	void			*content;
-	struct s_list	*next;
-}				t_list;
 
 void	*ft_memset(void *b, int c, size_t len);
 void	ft_bzero(void *s, size_t n);
