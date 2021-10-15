@@ -27,7 +27,7 @@ char	*ft_strmapi(const char *s, char (*f)(unsigned int, char))
 	if (s == NULL)
 		return (NULL);
 	len = ft_strlen(s);
-	fr = malloc((char)(len + 1))
+	fr = malloc((char)(len + 1));
 			if (!fr)
 				return (NULL);
 			fr[len] = '\0';

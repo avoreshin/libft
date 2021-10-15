@@ -25,7 +25,7 @@
 ** NULL, если выделение не удается.
 */
 
-char	**ft_split(char const *s, char c)
-{
-
-}
+//char	**ft_split(char const *s, char c)
+//{
+//
+//}
