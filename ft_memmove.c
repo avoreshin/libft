@@ -6,12 +6,25 @@
 /*   By: jlamonic <jlamonic@student.42.fr> >        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/08 17:42:27 by jlamonic          #+#    #+#             */
-/*   Updated: 2021/10/15 00:23:37 by jlamonic         ###   ########.fr       */
+/*   Updated: 2021/10/15 14:20:30 by jlamonic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-// #include <stdio.h>
+
+/*
+** RUS
+**
+** Функция memmove() копирует байты count  из строки src в строку dst.
+** Эти две строки могут накладываться друг на друга;
+** копирование всегда выполняется неразрушающим способом.
+** То есть если они в одной области памяти копирование будет
+** гарантировано правильным
+**
+** RETURN
+**
+** Функция memcpy() возвращает исходное значение dst.
+*/
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
@@ -40,30 +53,3 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	}
 	return (dst);
 }
-
-// unsigned char	*to;
-// 	unsigned char	*from;
-
-// 	to = (unsigned char *)dst;
-// 	from = (unsigned char *)src;
-// 	if (from == to || len == 0)
-// 		return (dst);
-	// if (to < from)
-	// 	while (len--)
-	// 		*to++ = *from++;
-	// else
-	// {
-	// 	to += len;
-	// 	from += len;
-	// 	while (len--)
-	// 		*--to = *--from;
-	// }
-	// return (dst);
-
-// int main (void)
-// {
-// 	char a[] = "AAA";
-// 	char b[] = "qwe";
-// 	printf("%s",(char*)ft_memmove(a, b, 3) );
-// 	return(0);
-// }

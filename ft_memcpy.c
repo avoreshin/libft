@@ -12,6 +12,17 @@
 
 #include "libft.h"
 
+/*
+** RUS
+**
+** Функция memcpy() копирует n байт из области памяти src в область памяти dst.
+** Если dst и src перекрываются, поведение не определено.
+**
+** RETURN
+**
+** Функция memcpy() возвращает исходное значение dst.
+*/
+
 void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
 	unsigned char	*dst1;

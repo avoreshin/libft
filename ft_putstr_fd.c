@@ -12,6 +12,10 @@
 
 #include "libft.h"
 
+/*
+** Печатает строку в заданный файловый дескриптор
+*/
+
 void	ft_putstr_fd(char *s, int fd)
 {
 	if (!s)
