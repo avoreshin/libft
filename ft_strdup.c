@@ -6,7 +6,7 @@
 /*   By: jlamonic <jlamonic@student.42.fr> >        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/08 17:42:27 by jlamonic          #+#    #+#             */
-/*   Updated: 2021/10/15 16:10:08 by jlamonic         ###   ########.fr       */
+/*   Updated: 2021/10/17 22:10:53 by jlamonic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,23 @@ char	*ft_strdup(const char *s1)
 {
 	size_t	len;
 	char	*copy;
+	size_t	i;
 
+	i = 0;
+	if (!s1)
+		return (NULL);
 	len = ft_strlen(s1);
 	copy = (char *)malloc(sizeof(char) * len + 1);
-	if (!(copy))
+	if (!copy)
 		return (NULL);
 	else
-		ft_memcpy(copy, s1, len);
+	{
+		while (i < len)
+		{
+			copy[i] = s1[i];
+			i++;
+		}
+		copy[i] = '\0';
+	}
 	return (copy);
 }
