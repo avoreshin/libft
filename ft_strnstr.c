@@ -6,7 +6,7 @@
 /*   By: jlamonic <jlamonic@student.42.fr> >        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/10 14:55:04 by jlamonic          #+#    #+#             */
-/*   Updated: 2021/10/16 00:17:28 by jlamonic         ###   ########.fr       */
+/*   Updated: 2021/10/18 21:55:49 by jlamonic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,10 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	size_t	j;
 
 	i = 0;
+	if (!ft_strlen(needle))
+		return ((char *)haystack);
+	if (ft_strlen(haystack) < ft_strlen(needle) || len < ft_strlen(needle))
+		return (NULL);
 	while (haystack[i] != '\0')
 	{
 		j = 0;

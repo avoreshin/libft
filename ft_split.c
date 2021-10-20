@@ -6,12 +6,12 @@
 /*   By: jlamonic <jlamonic@student.42.fr> >        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/14 21:44:54 by jlamonic          #+#    #+#             */
-/*   Updated: 2021/10/16 20:54:09 by jlamonic         ###   ########.fr       */
+/*   Updated: 2021/10/19 22:57:06 by jlamonic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
+#include <stdio.h>
 /*
 ** Описание
 ** выделяет (с помощью malloc(3)) и возвращает массив
@@ -25,64 +25,93 @@
 ** NULL, если выделение не удается.
 */
 
-int ft_count_words(char *s, char c)
+int	ft_count_words(char *s, char c)
 {
 	int	i;
 	int	count;
 
 	i = 0;
 	count = 0;
-	while (s[i] == c)
+	while (s[i] == c && s[i])
 		i++;
-	while(s[i])
+	while (s[i])
 	{
-		if (s[i++] == c && s[i] != c)
-			count++;
-	}
-	if(s[--i] != c)
 		count++;
+		while (s[i] != c && s[i])
+			i++;
+		while (s[i] == c && s[i])
+			i++;
+	}
 	return (count);
 }
 
-
-char	**ft_split(char const *s, char c)
+char	*ft_get_word(const char *s1, size_t len)
 {
-	int		count;
-	int		j;
-	int		len;
-	char	**str;
+	char	*word;
+	size_t	i;
 
-	if(!*s || !c)
+	i = 0;
+	if (!s1)
 		return (NULL);
-	count = ft_count_words((char *)s,c);
-	str = (char **)malloc(sizeof(char *) * (count + 1));
-	if(!str) {
+	word = (char *)malloc(sizeof(char) * len + 1);
+	if (!word)
 		return (NULL);
-	}
-	len = 0;
-	j = 0;
-	//Ловим слова и выделяем память
-	while(*s)
+	while (i < len)
 	{
-		while(*s && *s == c)
+		word[i] = s1[i];
+		i++;
+	}
+	word[i] = '\0';
+	return (word);
+}
+
+char	**ft_make_split(char **str, char const *s, char c)
+{
+	int		j;
+	char	*save;
+	int		len;
+
+	j = 0;
+	while (*s)
+	{
+		while (*s && *s == c)
 			s++;
+		if (!*s)
+			break ;
 		len = 0;
+		save = (char *)s;
 		while (*s && *s != c)
 		{
 			s++;
 			len++;
 		}
-		str[j] = (char *) malloc(sizeof (char *) * len + 1);
-		if(!str[j])
-			return(NULL);
-		s -= len;
-		len = 0;
-		while (*s && *s != c)
-		{
-			str[j][len++] = (char )*s++;
-		}
-		str[j++][len] = 0;
+		if (*save)
+			str[j] = ft_get_word(save, len);
+		if (!str[j++])
+			return (NULL);
 	}
-	str[j] = 0;
-	return(str);
+	str[j] = NULL;
+	return (str);
+}
+
+char	**ft_split(char const *s, char c)
+{
+	int		count;
+	char	**str;
+
+	if (!s)
+		return (NULL);
+	count = ft_count_words((char *)s, c);
+	if (!count)
+	{
+		str = (char **)malloc(sizeof(char *));
+		if (!str)
+			return (NULL);
+		str[count] = NULL;
+		return (str);
+	}
+	str = (char **)malloc(sizeof(char *) * (count + 1));
+	if (!str)
+		return (NULL);
+	return (ft_make_split (str, s, c));
 }

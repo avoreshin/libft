@@ -6,7 +6,7 @@
 /*   By: jlamonic <jlamonic@student.42.fr> >        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/08 17:42:27 by jlamonic          #+#    #+#             */
-/*   Updated: 2021/10/15 00:23:37 by jlamonic         ###   ########.fr       */
+/*   Updated: 2021/10/19 21:59:44 by jlamonic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,16 +29,18 @@ int	is_space(char c)
 
 int	is_digit(char c)
 {
-	return (c >= '0' && c < '9');
+	return (c >= '0' && c <= '9');
 }
 
 int	ft_atoi(const char *str)
 {
-	int	sign;
-	int	res;
+	int					sign;
+	unsigned long long	res;
+	int					rank;
 
 	sign = 1;
 	res = 0;
+	rank = 0;
 	while (*str && is_space(*str))
 		str++;
 	if (*str == '-')
@@ -47,8 +49,14 @@ int	ft_atoi(const char *str)
 		str++;
 	while (*str && is_digit(*str))
 	{
-		res = res * 10 + (*str - '0');
-		str++;
+		res = res * 10 + (*str++ - '0');
+		rank++;
+	}
+	if (rank > 19 || res > 9223372036854775807L)
+	{
+		if (sign == 1)
+			return (-1);
+		return (0);
 	}
 	return (res * sign);
 }

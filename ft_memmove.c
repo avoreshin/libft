@@ -23,7 +23,7 @@
 **
 ** RETURN
 **
-** Функция memcpy() возвращает исходное значение dst.
+** Функция memmove() возвращает исходное значение dst.
 */
 
 void	*ft_memmove(void *dst, const void *src, size_t len)

@@ -27,20 +27,15 @@ char	*ft_strdup(const char *s1)
 	size_t	i;
 
 	i = 0;
-	if (!s1)
-		return (NULL);
 	len = ft_strlen(s1);
 	copy = (char *)malloc(sizeof(char) * len + 1);
 	if (!copy)
 		return (NULL);
-	else
+	while (i < len)
 	{
-		while (i < len)
-		{
-			copy[i] = s1[i];
-			i++;
-		}
-		copy[i] = '\0';
+		copy[i] = s1[i];
+		i++;
 	}
+	copy[i] = '\0';
 	return (copy);
 }

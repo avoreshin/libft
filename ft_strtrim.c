@@ -6,7 +6,7 @@
 /*   By: jlamonic <jlamonic@student.42.fr> >        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/08 17:42:27 by jlamonic          #+#    #+#             */
-/*   Updated: 2021/10/16 14:09:36 by jlamonic         ###   ########.fr       */
+/*   Updated: 2021/10/18 15:57:51 by jlamonic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,6 @@ char	*ft_strtrim(char const *s1, char const *set)
 	i = ft_strlen(s1);
 	while (i && ft_strchr(set, s1[i]))
 		i--;
-	result = ft_substr(s1,0,i + 1);
+	result = ft_substr(s1, 0, i + 1);
 	return (result);
 }
