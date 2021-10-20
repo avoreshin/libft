@@ -6,7 +6,7 @@
 /*   By: jlamonic <jlamonic@student.42.fr> >        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/17 16:06:35 by jlamonic          #+#    #+#             */
-/*   Updated: 2021/10/19 00:47:03 by jlamonic         ###   ########.fr       */
+/*   Updated: 2021/10/20 18:02:23 by jlamonic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ typedef struct s_list
 {
 	void			*content;
 	struct s_list	*next;
-} 					t_list;
+}					t_list;
 
 void	*ft_memset(void *b, int c, size_t len);
 void	ft_bzero(void *s, size_t n);
@@ -62,6 +62,7 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*));
 /*
 **BONUS
 */
+
 t_list	*ft_lstnew(void *content);
 void	ft_lstadd_front(t_list **lst, t_list *new);
 int		ft_lstsize(t_list *lst);

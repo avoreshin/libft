@@ -52,7 +52,7 @@ int	ft_atoi(const char *str)
 		res = res * 10 + (*str++ - '0');
 		rank++;
 	}
-	if (rank > 19 || res > 9223372036854775807L)
+	if (rank > 19 || res > 9223372036854775807)
 	{
 		if (sign == 1)
 			return (-1);

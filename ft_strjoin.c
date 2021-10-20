@@ -6,13 +6,20 @@
 /*   By: jlamonic <jlamonic@student.42.fr> >        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/08 17:42:27 by jlamonic          #+#    #+#             */
-/*   Updated: 2021/10/15 00:23:37 by jlamonic         ###   ########.fr       */
+/*   Updated: 2021/10/20 18:13:05 by jlamonic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-//#include <stdio.h>
-//#include <stdlib.h>
+
+/*
+** выделяет (с помощью malloc(3)) и возвращает новую
+** строку, которая является результатом конкатенации
+** ’s1’ и ’s2’
+**
+** RETURN
+** Новая строка. NULL, если выделение не удается
+*/
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
@@ -37,11 +44,3 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	result [i] = '\0';
 	return (result);
 }
-
-//int 	main(void)
-//{
-//	char	*s1 ="qwe";
-//	char 	*s2 = "rty";
-//	printf ("%s\n", ft_strjoin(s1, s2));
-//	return (0);
-//}

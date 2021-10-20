@@ -6,7 +6,7 @@
 /*   By: jlamonic <jlamonic@student.42.fr> >        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/17 17:42:29 by jlamonic          #+#    #+#             */
-/*   Updated: 2021/10/18 23:30:21 by jlamonic         ###   ########.fr       */
+/*   Updated: 2021/10/20 18:07:56 by jlamonic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,27 +21,14 @@
 ** значением NULL.
 */
 
-t_list *ft_lstnew(void *content)
+t_list	*ft_lstnew(void *content)
 {
-	t_list *new;
+	t_list	*new;
 
-	new = (t_list*) malloc(sizeof (t_list));
+	new = (t_list *)malloc(sizeof (t_list));
 	if (!new)
 		return (NULL);
 	new -> content = content;
 	new -> next = NULL;
 	return (new);
 }
-//int main (void)
-//{
-//	t_list *qwer;
-//	int	i;
-//	i = 100;
-//
-//	qwer = ft_lstnew(&i);
-//	*(int *)qwer -> content = 200;
-//
-//	printf("%d\n",*(int *)qwer -> content);
-//	return (0);
-//
-//}

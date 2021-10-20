@@ -16,11 +16,11 @@
 ** Итерирует список ’lst’ и применяет функцию ’F’ к содержанию каждого элемента.
 */
 
-void ft_lstiter(t_list *lst, void (*f)(void *))
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	if(!f || !lst)
+	if (!f || !lst)
 		return ;
-	while(lst)
+	while (lst)
 	{
 		f (lst -> content);
 		lst = lst ->next;

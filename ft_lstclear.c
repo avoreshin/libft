@@ -6,7 +6,7 @@
 /*   By: jlamonic <jlamonic@student.42.fr> >        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/19 00:29:37 by jlamonic          #+#    #+#             */
-/*   Updated: 2021/10/19 00:40:07 by jlamonic         ###   ########.fr       */
+/*   Updated: 2021/10/20 18:05:54 by jlamonic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,16 +17,16 @@
 ** Наконец, указатель на список должен быть установлен на НУЛЕВОЙ.
 */
 
-void ft_lstclear(t_list **lst, void (*del)(void*))
+void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
-	t_list *save;
+	t_list	*save;
 
-	if(!del || !lst || !*lst)
+	if (!del || !lst || !*lst)
 		return ;
-		while(*lst && lst)
-		{
-			save = (*lst) -> next;
-			ft_lstdelone(*lst, del);
-			*lst = save;
-		}
+	while (*lst && lst)
+	{
+		save = (*lst)-> next;
+		ft_lstdelone(*lst, del);
+		*lst = save;
+	}
 }
